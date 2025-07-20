@@ -8,59 +8,64 @@
     <link rel="stylesheet" href="tablebox.css">
 </head>
 
-<body style="background-color: lightcyan;">
+<body style="background-color: lightskyblue;">
 
     <table>
         <!-- To add a title to our table, we can use the <caption> element. -->
         <caption>Students</caption>
         <!-- Table row -->
         <thead>
-        <tr>
-            <!-- Table heading -->
-            <th>Name</th>
-            <th>Age</th>
-            <th>Class</th>
-        </tr>
+            <tr>
+                <!-- Table heading -->
+                <th>Name</th>
+                <th>Marks</th>
+                <th>Subject</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <!-- Table data (used for table cells) -->
-            <td>Anshika</td>
-            <td>15</td>
-            <td>6th</td>
-        </tr>
-        <tr>
-            <td>Khushi</td>
-            <td>16</td>
-            <td>7th</td>
-        </tr>
-        <tr>
-            <td>Anjali</td>
-            <td>17</td>
-            <td>8th</td>
-        </tr>
-        <tr>
-            <td>Shivani</td>
-            <td>18</td>
-            <td>9th</td>
-        </tr>
-        <tr>
-            <td>Nisha</td>
-            <td>19</td>
-            <td>10th</td>
-        </tr>
+            <tr>
+                <!-- Table data (used for table cells) -->
+                <td>Anshika</td>
+                <td>85</td>
+                <td>Maths</td>
+            </tr>
+            <tr>
+                <td>Khushi</td>
+                <td>74</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>Kriti</td>
+                <td>80</td>
+                <td>History</td>
+            </tr>
+            <tr>
+                <td>Pari</td>
+                <td rowspan="2">79</td>
+                <td>Biology</td>
+            </tr>
+            <tr>
+                <td>Neha</td>
+                <td>P.Ed</td>
+            </tr>
+            <tr>
+                <!-- If we want a table cell to span multiple rows, we can use the rowspan attribute. -->
+                <!-- If we want a table cell to span multiple columns, we can use the colspan attribute. -->
+                <td colspan="2"> Aashi</td>
+                <td>Physics</td>
+            </tr>
+            <tr>
+                <td>Ruby</td>
+                <td>81</td>
+                <td>Hindi</td>
+            </tr>
         </tbody>
         <tfoot>
-        <tr>
-            <!-- If we want a table cell to span multiple rows, we can use the rowspan attribute. -->
-            <!-- If we want a table cell to span multiple columns, we can use the colspan attribute. -->
-            <td colspan="2"> Simran</td>
-            <td rowspan="2">11th</td>
-        </tr>
-        <tr>
-            <td>Trisha</td>
-            <td>21</td>
-        </tr>
+            <tr>
+                <td>Total</td>
+                <td>399</td>
+                <td></td>
+            </tr>
         </tfoot>
     </table>
 

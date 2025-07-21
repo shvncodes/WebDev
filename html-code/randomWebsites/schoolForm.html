@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form - For Admission</title>
+    <link rel="stylesheet" href="tableForSchoolForm.css">
+</head>
+
+<body style="background-color: bisque;">
+    <h1>APPLICATION FORM</h1>
+    <form action="post">
+        <div>
+            <label for="Adnumber">Admission No: </label>
+            <input type="number" id="Adnumber" name="Adnumber" placeholder="Enter the Admission No.">
+        </div>
+        <div><b>Student Personal Data</b></div>
+        <ol>
+            <li>
+                <div>
+                    <label for="name">Name of the Student: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter the Student Name">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="class">Class to which admission is sought: </label>
+                    <input type="number" name="class" id="class">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="dob">Date Of Birth: </label>
+                    <input type="text" name="dob" id="bod">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="add">Address: </label>
+                    <input type="text" name="add" id="add">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="gender">Gender: </label>
+                    <input type="radio" name="male" id="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="female" id="female">
+                    <label for="female">Female</label>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="bloodgrp">Blood Group: </label>
+                    <input type="text" name="bloodgrp" id="bloodgrp">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="mothrTong">Mother Tongue: </label>
+                    <input type="text" name="mothrTong" id="mothrTong">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="nation">Nationality: </label>
+                    <input type="text" name="nation" id="nation">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="Religion">Religion: </label>
+                    <input type="text" name="Religion" id="Religion">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="schlName">Previous School Name: </label>
+                    <input type="text" name="schlName" id="schlName">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="Affliated">Affiliated to: </label>
+                    <select name="Affliated" id="Affliated">
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSE">ICSE</option>
+                        <option value="STATE BOARD">STATE BOARD</option>
+                        <option value="OTHERS">OTHERS</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <label for="bus">Would you require school bus facility: </label>
+                    <input type="checkbox" name="bus" id="bus">
+                    <label for="bus">Yes</label>
+                    <input type="checkbox" name="bus" id="bus">
+                    <label for="bus">No</label>
+                </div>
+            </li>
+            <li> 
+                <p>Details of the Parents/Guardian: </p>
+                <table>
+                    <thead>
+                        <th></th>
+                        <th>Father</th>
+                        <th>Mother</th>
+                        <th>Guardian</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Qualification</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Occupation</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Annual Income</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Residential Address</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Number & Email ID</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+        <h4>Documents to be enclosed with Admission Form</h4>
+        <div>
+            <input type="checkbox" name="BC" id="BC">
+            <label for="BC">Photocopy of Bith Certificate</label>
+            <input type="checkbox" name="TC" id="TC">
+            <label for="TC">Transfer Certificate Original</label>
+        </div>
+        <div>
+            <input type="checkbox" name="photo" id="photo">
+            <label for="photo">Passport Size Photographs</label>
+            <input type="checkbox" name="report" id="report">
+            <label for="report">Progress Report of the previous school</label>
+        </div>
+        <div>
+            <input type="checkbox" name="PFC" id="PFC">
+            <label for="PFC">Physical Fitness Certificate</label>
+            <input type="checkbox" name="CC" id="CC">
+            <label for="CC">Community Certificate</label>
+        </div>
+        <div>
+            <input type="checkbox" name="AC" id="AC">
+            <label for="AC">Photocopy of Aadhar Card</label>
+            <input type="checkbox" name="PAP" id="PAP">
+            <label for="PAP">Parents Address Proof and Photos</label>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

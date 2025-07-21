@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - Web Development Course</title>
+</head>
+<body>
+    <h1>Form to apply for Sigma  Web Development course - CodeWitheHarry</h1>
+    <!-- The fundamental structure of an HTML form is encapsulated within the <form> tags.
+        <placeholder> attribute provides a hint to the user about what to enter.
+        <input> Used for user inputs (text, email, password, etc.)
+        <type> contains the input data type. eg:- email, password, numbers, submit, reset, etc.
+        <password> input type is similar to the text type but hides the characters entered by the user for security reasons.
+        <radio> buttons are used when you want the user to select only one option from a set of choices.
+        <checkboxes> allow the user to select multiple options from a set, 
+        textarea> element is used when you need multiline text input from the user. This is particularly useful for comments, reviews, or any other type of input where the length is unpredictable. rows and cols attributes define the visible dimensions of the textarea.
+        <select> element creates a dropdown menu for the user. It is useful when you have a predefined list of options for the user to choose from. Each <option> inside the select tag represents an item in the dropdown list.
+        <br> tag doesn't recommended to used so much.
+        <required> attribute makes a field mandatory.
+        <pattern> attribute specifies a regular expression that the input must match to be valid.
+        <button>Create buttons (can be used to submit too)
+    -->
+    <form action="post">
+        <div>
+            <label for="username">Enter the username</label>
+            <input type="text" id="username" name="username" placeholder="Enter the username">
+        </div>
+        <div>
+            <label for="password">Enter the password</label>
+            <input type="password" id="password" name="password" placeholder="Enter the password" required>
+        </div>
+        <div>
+            <label for="pattern">Phone Number</label>
+            <input type="text" pattern="XX-XXX-XXXXX" id="pattern" placeholder="XX-XXX-XXXXX">
+        </div>
+        <div>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <input type="checkbox" id="subscribe 12th" name="subscribe" value="yes">
+            <label for="subscribe">Subscribe</label>
+        </div>
+        <div>
+            <label for="comment">Enter the comment</label>
+            <br> 
+            <textarea name="comment" id="comment" rows="4" cols="50" placeholder="Enter the comment here"></textarea>
+        </div>
+        <div>
+            <label for="lang">Language</label>
+            <select name="Language" id="lang">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+</body>
+</html>

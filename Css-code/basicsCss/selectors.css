@@ -1,0 +1,80 @@
+/* CSS Selectors:- It allow us to choose specific elements and apply style to them.*/
+                        
+                        /* Most used Selector's */
+
+/*1. Element Selector:- all div backgrond-color change into lightblue.*/
+h1 {
+    color: red;
+    text-align: center;
+}
+
+div {
+    background-color: lightblue;
+}
+
+/*2. Class Selector:- only the particular class background-color change.*/
+/* .second meansclass is second */
+.second {
+    background-color: lightgreen;
+}
+
+/*3. Id Selector:- only the particular id background-color change.*/
+/* #third means Id is third */
+#third {
+    background-color: lightpink;
+}
+
+/*4. Child Selector:-(father>son) div ke andar direct paragraph hua to hi iska style change hoga.*/
+/* div>p means division ke andar jo paragrap hai */
+/* Only applicable for first child of its parents. */
+div>p { 
+    background-color: lightsalmon;
+}
+#third >p {
+    background-color: palevioletred;
+}
+.second>p {
+    background-color: greenyellow;
+}
+
+/*5. Descendant Selector:-(grandparents> father> son> son son's..) div ke andar p hona chahiye ab vo kitna bhi andar kyu na ho.*/
+/* div p means div ke andar p present hai */
+div p {
+    background-color: aquamarine;
+}
+
+/*6. Universal Selector:- For complete body.*/
+/* * means complete body text */
+* {
+    margin: 10px;
+    padding: 10px;
+}
+
+/*7. Pseudo Selector:- for style links.*/
+/* a:visited ka matlab hai ki is link par visit karne ke baad link ka style (color/bg-color/etc.) kaisa hoga.
+   a:link ka matlab hai ki is link par visit karne se pehle link ka style (color/bg-color/etc.) kaisa hoga.
+        - us link par visit karne ke bad uska color a:visited wala ho jayega.
+   a:active ka matlab ki jab us link pe click karenge to uska style (color/bg-color/etc.) kaise hoga.
+   a:hover ka matalb hai jab hum pointer link pe rakhenge to uska style (color/bg-color/etc.) kaise hoga. 
+   span:first-child ka matlab hai ki span jis-jis ka bhi first chid hai uska style (color/bg-color/etc.) kaise hoga.
+*/
+a:visited {
+    color: brown;
+}
+a:link {
+    color: darkgreen; 
+}
+
+a:active {
+    background-color: yellow;
+    color: darkblue;
+}
+
+a:hover {
+    color: yellow;
+    background-color: deeppink;
+}
+
+span:first-child {
+    background-color: orange;
+}

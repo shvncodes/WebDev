@@ -1,0 +1,13 @@
+/* INLINE CSS:- Avoid as much as possible.
+    INTERNAL CSS:- For small website or very minimal use of css.
+    EXTERNAL CSS:- Most of the cases we use this.
+*/
+
+div {
+    color: brown;
+    background-color: aqua;
+}
+
+body {
+    background-color: pink;
+}

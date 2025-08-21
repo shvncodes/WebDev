@@ -50,13 +50,13 @@ div p {
     padding: 10px;
 }
 
-/*7. Pseudo Selector:- for style links.*/
+/*7. Pseudo Selector */
 /* a:visited ka matlab hai ki is link par visit karne ke baad link ka style (color/bg-color/etc.) kaisa hoga.
    a:link ka matlab hai ki is link par visit karne se pehle link ka style (color/bg-color/etc.) kaisa hoga.
         - us link par visit karne ke bad uska color a:visited wala ho jayega.
    a:active ka matlab ki jab us link pe click karenge to uska style (color/bg-color/etc.) kaise hoga.
    a:hover ka matalb hai jab hum pointer link pe rakhenge to uska style (color/bg-color/etc.) kaise hoga. 
-   span:first-child ka matlab hai ki span jis-jis ka bhi first chid hai uska style (color/bg-color/etc.) kaise hoga.
+   span:first-child ka matlab hai ki span jis-jis ka bhi first child hai uska style (color/bg-color/etc.) kaise hoga.
 */
 a:visited {
     color: brown;

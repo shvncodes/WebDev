@@ -1,0 +1,47 @@
+/* In a page (outer to inner side)looks like:- Margin > Border > Padding > Content.
+   1. Content:- The innermost component of the box model is the actual content of the element. 
+   2. Padding:- The space between the actual content and the border of the element.
+   3. Border:- The border surrounds the content and padding and gives the visual border of the element.
+   4. Margin:- The margin is the space outside the element that separates it from other elements in the layout.
+*/
+
+/* How to see boxModel in any website :- Inspect >> Element >> us content pe click kro jiska box model dekhna hai >> Computed */
+
+/* Total Width = Width + Left Padding + Right Padding + Left Border + Right Border + Left Margin + Right Margin
+Total Height = Height + Top Padding + Bottom Padding + Top Border + Bottom Border + Top Margin + Bottom Margin
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: lightblue;
+}
+
+.box1 {
+    color: blue;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid black;
+    /* Agar sirf height dala to sirf content ka height hi 50px hoga baki padding, border & margin ka alag. */
+    height: 50px; 
+}
+
+.box2 {
+    color: red;
+    padding: 30px;
+    margin: 40px;
+    border: 5px solid purple;
+/*Aur agar height ke sath box-sizing: border box bhi dala to ye (content + padding + border) ko include karke 
+height 100px hogi. Margin is mai include nhi hoga. 
+*/
+    height: 100px;
+    box-sizing: border-box;
+}
+
+/* Margin Collapse:- Agar do box hai Box1 & Box2 to dono ke beech mai jo margin hoga vo maximum wale ka hoga aur agar dono ka margin same hai to same hi rahega add nhi hoga 
+Eg:- Upar wale case mai dono ke beech mai margin 40px ka hoga na ki 60px kyuki 40px max hai.
+Video lecture #18:-(CSS Box Model) at (14:50) Margin Collapse.
+*/

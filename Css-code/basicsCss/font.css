@@ -1,0 +1,73 @@
+/* font-family ke first mai jo font likha hota hai vo lagane ki koshish karega agr ye available nhi hua humare system mai to uske next wala lagayega agr vo bhi nhi hua to uske next...so on.
+font-family ek comma seperated wali hoti hai.
+-> Main font - Lucida Sans && Segoe UI
+-> Fallback fonts - 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+                            &&
+                Tahoma, Geneva, Verdana, sans-serif
+*/
+
+                /* # Agar direct apne code se hi font-family choose karna ho to:- */
+
+/* h1 {
+    font-family: "Ballet", cursive;
+} 
+
+div {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 600; 
+    text-decoration: underline;
+    font-size: 30px;
+    color: red;
+}
+
+p {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+
+                        /* Agar google font se font use karna ho to:- */
+
+/* How to use fonts from Google Fonts in our code:- 
+1. By import :- sbse pehle font ko search karo phir right-side pe "get font" pe click karna hai aur phir "get embedded code" par click karenge aur phir "@import" pe click karna hai aur is mai jo style ke andar likha hai use copy karke apne code pe paste karna hai.
+aur phir jis bhi element mai ye font use karna hai usmai uska font-family likh denge usi ke neeche font-family ki value bhi likhi hoti hai.
+We can import multiple fonts in one import statement.
+2. By link :- Similar process as import bs "@import" ki jagah "<link>" par click karke sare link ko copy karke html page ke head section mai paste kar dena hai phir bs family-font ko likh dena hai elements ke andar.
+We can add multiple fonts link in html page.
+*/
+
+                /* By Import:- */
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Berkshire+Swash&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+            
+                /* Same in both way */
+h1 {
+    font-family: "Ballet", cursive;
+    color: brown;
+}
+
+div {
+    color: red;
+    font-family: "Berkshire Swash", serif;
+    font-style: italic;
+    font-size: 50px;    /*By default font-size is 32px*/
+    font-weight: 500;   /*By default font-weight is 700*/
+    text-decoration: underline;
+    text-decoration-color: blue;    /*jo bhi humne text decoration use kiya hai uska color kaisa hoga*/
+    text-decoration-style: solid;     /*jo bhi humne text decoration use kiya hai uska style kaisa hoga*/
+    text-decoration-thickness: 10px;  /*By default thickness is auto */
+    text-indent: 100px;               /*Gap from left side*/
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: green;
+    /* Different values of text-transform perform different tasks eg ":lowercase" it convert all the letter of the words in small letter. ":uppercase" it convert all the letter of the words in capital letter & so on.*/
+    text-transform: capitalize; /*It capitalize the first letter of words.*/
+    text-align: center; /*For text alignment*/
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    line-height: 30px; /*height between two lines or space between two lines.*/
+    letter-spacing: 4px; /*By default 0px*/ 
+}

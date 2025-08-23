@@ -1,0 +1,42 @@
+.container {
+    border: 5px solid red;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;   /*It contain two values flex-direction||flex-wrap */
+    /* We can use gap istead of using margin */
+    /* gap: 35px;
+    row-gap: 30px;
+    column-gap: 20px; */
+    gap: 40px 10px; /*It contain two values row-gap || column-gap */
+
+}
+
+.items {
+    height: 92px;
+    width: 92px;
+    border: 2px solid black;
+    background-color: lightpink;
+    /* margin: 10px; */
+}
+
+/* By default order of every element is 0 */
+.order1 {
+    order: 1;
+}
+.order2 {
+    order: -4;
+}
+.order3 {
+    order: -22;
+    /* flex-grow: 2;  Ye utne boxes ki jagah le lega jab screen badi hogi*/
+    /* flex-shrink: 2;  Ye itne speed se shrink hoga jab screen chotti hogi */
+    align-self: flex-start;
+}
+.order4 {
+    order: 10;
+    align-self: flex-end;
+}

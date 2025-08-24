@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Root element */
+html {
+    font-size: 12px;
+}
+
+.box {
+    box-sizing: border-box;
+    border: 2px solid black;
+    /* width: 1700px; */
+    width: 80vw;        /* vw (viewport width) :- it take x% width of the screen. */
+    height: 10vh ;      /* vw (viewport height) :- it take x% height of the screen. */
+    margin: auto;       /* dono taraf se equal margin ho jayega aur ye sirf block element pe hi lagega.*/
+    background-color: lightpink;
+    font-size: 10px;    /* By default 16px */
+    font-size: 2rem;    /* font-size => x times of root element font-size(12px) or by default font-size(16px)*/
+    /* font-size: 2em; font-size => x times of above font-size(10px), root element font-size(12px) or by default font-size(16px) */
+}
+
+.container {
+    box-sizing: border-box;
+    border: 2px solid black;
+    width: 80vw; 
+    /* height: 60vh; */
+    min-height: 70vh; /* min-heigth itni hogi maximum jitna us mai text hoga utna */
+    margin: 25px auto; /* margin: <top & bottom>  <left & right> */
+    font-size: 14px; 
+    background-color: lightblue;
+}
+
+.container > div {
+    font-size: 1.5em; /*font-size => x times of above font-size(11px), root element font-size(12px) or by default font-size(16px) */
+    /* font-size: 2rem; font-size => x times of root element font-size(12px) or by default font-size(16px) */
+    border: 2px solid red;
+    width: 70%; /* 70% percent width of parent(div) */
+}
+
+.container > div > div {
+    border: 2px solid darkblue;
+    width: 40%; /* 40% percent width of parent(div) */   
+}
+
+.last {
+    color: maroon;
+    background-color: lightcoral;
+    box-sizing: border-box;
+    border: 2px solid black;
+    width: 80vw; 
+    margin: 25px auto; /* margin: <top & bottom>  <left & right> */
+}

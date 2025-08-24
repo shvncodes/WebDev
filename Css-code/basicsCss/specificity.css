@@ -1,0 +1,73 @@
+/* CSS Specificity helps determine what style will be applied to the HTML element(s) when there are overlapping or multiple CSS rules. 
+Cascade Algorithm:-
+    1.Position and order of appearance: Agar specificity same hai mtlb ki same selector hai to jo sbse last mai hoga vo lagega.
+    2.Specificity: an algorithm that determines which CSS selector has the strongest .
+            - Inline style > ID Selectors > Class Selectors > Element Selectors > Universal Selectors.
+    3.Importance: some CSS rules are weighted more heavily than others, especially with the !important rule type.
+*/
+
+* {
+    color:yellow;
+    background-color: lightskyblue;
+}
+
+/* h1 color is brown bcz of inline style & background color is lightpink bcz .primary class selector in last*/
+h1{
+    color: blue;
+    background-color: lightgreen;
+}
+
+.main {
+    color: tomato;
+    background-color: lightblue;
+}
+
+.first {
+    color: orange;
+    background-color: lightskyblue;
+}
+
+.primary {
+    color: red;
+    background-color: rgb(253, 209, 215);
+}
+
+/* p color is purple & background color is lightyellow bcz id selector is more specific than element & class selector.*/
+
+p {
+    color: red;
+    background-color: aliceblue;
+}
+
+#paragraph {
+    color: purple;
+    background-color: rgb(242, 242, 87);
+}
+
+.secondary {
+    color: orange;
+    background-color: aquamarine;
+}
+
+.para {
+    color: darkgreen;
+    background-color: lightgreen;    
+}
+
+/* div color is orange & background color is bisque bcz of element selector */
+
+div {
+    color: orange;
+    background-color:bisque;
+}
+
+/* span color is darkmagenta bcz of !imporatant & background color is lightpink bcz of class selector */
+span {
+    color: darkmagenta !important;
+    background-color: lightgreen;
+}
+
+.last {
+    color: darkgreen;
+    background-color: lightpink;
+}

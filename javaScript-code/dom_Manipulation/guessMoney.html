@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Money</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       #heading {
+            color: black;
+            text-align: center;
+        }
+        .btn {
+            height: 30px;
+            width: 90px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Guess the box which have Money</h1>
+    <button id="btn1" class="btn"></button>
+    <button id="btn2" class="btn"></button>
+    <button id="btn3" class="btn"></button>
+    <button id="btn4" class="btn"></button>
+
+    <script>
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        let btn3 = document.querySelector("#btn3");
+        let btn4 = document.querySelector("#btn4");
+        let arr = [btn1, btn2, btn3, btn4];
+        let winnerPosition = Math.floor(Math.random() * 4)
+
+        function handleClick() {
+            for(let i = 0; i <arr.length; i++) {
+                if(i == winnerPosition) {
+                    arr[i].innerHTML = '$500';
+                } else {
+                    arr[i].innerHTML = 'loser';
+                }
+            }
+        }
+        
+        btn1.addEventListener("click", handleClick);
+        btn2.addEventListener("click", handleClick);
+        btn3.addEventListener("click", handleClick);
+        btn4.addEventListener("click", handleClick);
+
+    </script>
+</body>
+</html>

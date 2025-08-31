@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - JavaScript</title>
+    <style>
+        body
+        .div {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+        .div-dark {
+            height: 100px;
+            width: 100px;
+            background-color: deeppink;
+        }
+
+        .buttons{
+            background-color: black;
+            color: white;
+        }
+        .buttons:hover {
+            background-color: gray;
+        }
+        
+        .buttons-dark {
+            background-color: white;
+            color: black;
+        }
+        .buttons-dark :hover {
+            background-color: rgb(243, 232, 232);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Inline event handler -->
+    <button onclick="console.log('button was clicked');alert('hello')" class="buttons">Click me!</button>
+    <button ondblclick="console.log('button was clicked 2 times');" class="buttons">Click me 2 times</button>
+
+    <!-- JS event handler -->
+    <button id="btn" class="buttons">Click here</button>
+    <div id="box" class="div">I am a box</div>
+
+    <button id="btn1" class="buttons">Yes</button>
+    <button id="btn2" class="buttons">No</button>
+    <button id="btn3" class="buttons">Okk</button>
+
+    <button id="toggle" class="buttons">mode</button>
+
+
+    <script src="events.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+      /* Default (light theme) */
+      :root {
+        --bg-color: white;
+        --text-color: black;
+      }
+
+      /* Dark theme overrides */
+      .dark {
+        --bg-color: #222;
+        --text-color: white;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: Arial, sans-serif;
+        transition: background 0.3s, color 0.3s;
+        padding: 20px;
+      }
+
+      .content {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: var(--text-color);
+        color: var(--bg-color);
+        transition: background 0.3s, color 0.3s;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body id="main">
+    <h1 class="content">Hello World! 👋</h1>
+    <p class="content">
+      rgr4gr g34 g45g54g4rgf345 45 h45h 54g54 g54 h45 h45 gh 45h 54 g34f34g
+      43g5454g54h56hg5tgh 54tgh54g54g45g54h5th5trg 45tg45g
+    </p>
+    <button onclick="themeChange()">Change theme</button>
+
+    <script>
+        const main = document.getElementById("main");
+        function themeChange() {
+            const len = main.classList.length;
+            let isDark = false;
+            for(let i=0;i<len;i++) {
+                if(main.classList[i] === 'dark') {
+                    isDark = true;
+                    break;
+                }
+            }
+            if(isDark) {
+                main.classList.remove('dark');
+            } else {
+                main.classList.add('dark');
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -10,40 +10,85 @@
             padding: 0;
             box-sizing: border-box;
         }
+        #box {
+            text-align: center;
+        }
        #heading {
             color: black;
             text-align: center;
+            padding: 20px;
+        }
+        #main {
+            padding: 40px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
         }
         .btn {
             height: 30px;
             width: 90px;
         }
-
+        button {
+            padding: 5px;
+        }
+        #replay {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1 id="heading">Guess the box which have Money</h1>
-    <button id="btn1" class="btn"></button>
-    <button id="btn2" class="btn"></button>
-    <button id="btn3" class="btn"></button>
-    <button id="btn4" class="btn"></button>
+    <div id="box">
+        <h1 id="heading">Guess the box which have Money</h1>
+        <div id="main"></div>
+        <button id="replay" onclick="newStart()">Replay</button>
+    </div>
 
     <script>
-        let allButtons = document.querySelectorAll(".btn");
-        let winnerPosition = Math.floor(Math.random() * 4)
+        const main = document.querySelector("#main"); 
+        const replay = document.querySelector("#replay"); 
+        const totalBoxes = 4;
 
-        function handleClick() {
-            for(let i = 0; i < allButtons.length; i++) {
+        function createAButton() {
+            const button = document.createElement("button");
+            button.className = 'btn';
+            return button;
+        }
+
+        function handleClick(winnerPosition, currPosition) {
+            for(let i = 0; i < totalBoxes; i++) {
                 if(i === winnerPosition) {
-                    allButtons[i].innerText = '$500';
+                    main.children[i].innerText = '$500';
                 } else {
-                    allButtons[i].innerText = 'loser';
+                    main.children[i].innerText = 'loser';
                 }
             }
+            if(currPosition === winnerPosition) {
+                main.children[currPosition].style.backgroundColor = "green";
+            } else {
+                main.children[currPosition].style.backgroundColor = "red";
+            }
         }
-        for(let x = 0; x < allButtons.length; x++) {
-            allButtons[x].addEventListener("click", handleClick);   
+
+        function newStart() {
+            main.innerHTML = ''
+            replay.style.display = "none";
+            let winnerPosition = Math.floor(Math.random() * totalBoxes)
+            
+            for(let x = 0; x < totalBoxes; x++) {
+                const btn = createAButton();
+                main.append(btn);
+            }
+
+            for(let i=0;i<totalBoxes;i++){
+                main.children[i].addEventListener("click", function (){
+                    handleClick(winnerPosition, i);
+                    replay.style.display = "inline";
+                });
+            }
         }
+
+        newStart();
+
     </script>
 </body>
 </html>

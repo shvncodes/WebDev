@@ -29,28 +29,21 @@
     <button id="btn4" class="btn"></button>
 
     <script>
-        let btn1 = document.querySelector("#btn1");
-        let btn2 = document.querySelector("#btn2");
-        let btn3 = document.querySelector("#btn3");
-        let btn4 = document.querySelector("#btn4");
-        let arr = [btn1, btn2, btn3, btn4];
+        let allButtons = document.querySelectorAll(".btn");
         let winnerPosition = Math.floor(Math.random() * 4)
 
         function handleClick() {
-            for(let i = 0; i <arr.length; i++) {
-                if(i == winnerPosition) {
-                    arr[i].innerHTML = '$500';
+            for(let i = 0; i < allButtons.length; i++) {
+                if(i === winnerPosition) {
+                    allButtons[i].innerText = '$500';
                 } else {
-                    arr[i].innerHTML = 'loser';
+                    allButtons[i].innerText = 'loser';
                 }
             }
         }
-        
-        btn1.addEventListener("click", handleClick);
-        btn2.addEventListener("click", handleClick);
-        btn3.addEventListener("click", handleClick);
-        btn4.addEventListener("click", handleClick);
-
+        for(let x = 0; x < allButtons.length; x++) {
+            allButtons[x].addEventListener("click", handleClick);   
+        }
     </script>
 </body>
 </html>

@@ -57,3 +57,14 @@ const data = {
 // Pizza Pvt. ltd. -> Gaurav & Shivani
 // CEO - Gaurav (Barath)
 // CTO - Shivani (Vedha)
+
+
+const page = {
+    padeID: "id",
+    content: "text",
+    name: "name",
+    location: "add",
+    createdAt: "date",
+    updatedAt: "update",
+    isDeleted: false
+}

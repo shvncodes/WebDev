@@ -62,8 +62,12 @@ numbers.sort(); // Ye numbers ko directly sort kar deta hai.
 // includes
 const isIncluded = numbers.includes(2)
 
+// splice
+const items = ["mobile", "laptop", "charger", "AC", "TV", "Washing Machine", "Tablet"];
+items.splice(3, 2); //  => original array me modify karta hai, aur modified items return bhi karta hai. (removed => "AC", "TV")
 
-
+// slice
+items.slice(2,3) // => ye sirf (start,end) ka data return karta hai, Original array me kuch bhi change NAHI karta.
 
 // --------------------------------------------------------------------------------------------------
 

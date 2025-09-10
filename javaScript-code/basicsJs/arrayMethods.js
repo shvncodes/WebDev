@@ -63,11 +63,35 @@ numbers.sort(); // Ye numbers ko directly sort kar deta hai.
 const isIncluded = numbers.includes(2)
 
 // splice
-const items = ["mobile", "laptop", "charger", "AC", "TV", "Washing Machine", "Tablet"];
-items.splice(3, 2); //  => original array me modify karta hai, aur modified items return bhi karta hai. (removed => "AC", "TV")
+const items = ["mobile", "laptop", "charger", "AC", "TV", "Washing Machine"];
+        //to delete element from items-
+items.splice(3, 2); // => original array me modify karta hai, aur modified items return bhi karta hai. (removed => "AC", "TV")
+        //to delete elements & insert another elements at that place-
+items.splice(0, 2, "cooler", "tablet", "sewing machine"); // it remove "mobile" & "laptop" from items and insert "cooler", "tablet" & "sewing machine" in place of that.
+// it returns => ["cooler", "tablet", "sewing machine", "charger", "AC", "TV", "Washing Machine"]
+        //to add element at particular index-
+items.splice(3, 0, "smartphone");
 
 // slice
-items.slice(2,3) // => ye sirf (start,end) ka data return karta hai, Original array me kuch bhi change NAHI karta.
+items.slice(2,3) // => ye sirf (startIndx,endIndx) ka data return karta hai, Original array me kuch bhi change NAHI karta.
+
+//toString
+let num = [1, 2, 3, 4, 5];
+num.toString(); // => return all element of the array as a string, Original array me kuch bhi change NAHI karta.
+
+//concat
+let fruits = ["apple", "mango", "litchi"];
+let vegetables = ["potato", "tomato", "cabbage"];
+let fastFood = ["pizza", "burger", "pasta"]
+fruits.concat(vegetables, fastFood); // => Combine all the arrays & return a new array without modifying any existing arrays.
+
+
+//unshift
+fruits.unshift("papaya", "orange"); // => Inserts new elements at the starting of the original array, & returns the new length of the array. 
+
+// shift
+vegetables.shift(); // => Removes the first element from the original array and returns it.
+
 
 // --------------------------------------------------------------------------------------------------
 

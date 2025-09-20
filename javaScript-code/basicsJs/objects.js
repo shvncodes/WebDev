@@ -68,3 +68,30 @@ const page = {
     updatedAt: "update",
     isDeleted: false
 }
+
+// chatgpt object for each chat
+const chat = {
+   id: '68cebac9-5700-8324-a617-38fe2469e668',
+   name: 'Import in vanilla JS',
+   content: 'grbgregi4orhyfo834fg34g 5gh54g9854g5450',
+   createdAt: '20 Sep 2025, 7:00PM',
+   createdBy: 'shivani-account-id'
+}
+
+export const questions = [
+    {
+        id: 'questionId1',
+        name: 'question 1',
+        options: ['option1', 'option2'],
+        rightOption: 'option1'
+    },
+    {
+        id: 'questionId2',
+        name: 'quetsion 2',
+        options: ['option1', 'option2', 'option3', 'option4'],
+        rightOption: 'option3'
+    }
+]
+// import {questions} from "./objects"
+
+

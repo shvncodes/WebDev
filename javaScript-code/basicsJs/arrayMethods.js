@@ -21,9 +21,9 @@ let squared = numbers.map((num, index) => {
     if(index == 0) {
         return num;
     }
-    return num*index;
+    return num*num;
 });
-console.log(squared); // [1, 2, 6, 12]
+console.log(squared); // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 
 // filters
@@ -35,6 +35,11 @@ const evenNumbers = numbers.filter((value) => {
 })
 
 console.log(evenNumbers); // [2,4,6,8,10]
+
+const totalSum = numbers.reduce((result, currentVal) => {
+    return result + currentVal;
+})
+console.log(totalSum); // 55
 
 // find
 const data = numbers.find((value) => {

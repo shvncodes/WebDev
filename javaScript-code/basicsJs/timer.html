@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        #timer {
+            height: 100%;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer">Timer: 02:00</div>
+
+    <script>
+        const timerNode = document.getElementById("timer")
+        const time = {
+            minutes: 2,
+            seconds: 0
+        }
+
+        let intervalId = null;
+        intervalId = setInterval(() => {
+            if (time.seconds === 0) {
+                time.minutes -= 1;
+                time.seconds = 59;
+            } else {
+                time.seconds -= 1;
+            }
+
+            const seconds = time.seconds < 10 ? `0${time.seconds}` : `${time.seconds}`;
+            const minutes = `0${time.minutes}`;
+
+            timerNode.textContent = "Timer: "+ minutes + ':' + seconds;
+            
+            if (time.minutes === 0 && time.seconds === 0 && intervalId) {
+                // clear interval
+                clearInterval(intervalId);
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>

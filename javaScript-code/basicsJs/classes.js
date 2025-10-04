@@ -161,8 +161,12 @@ const realmeMobile = new MobilePhone("43323242", "SMART_PHONE", "6.67", "Realme"
 
 // Inheritance
 class SmartPhone extends MobilePhone {
-    constructor(id,type,size,brand,camera,...) {
-        super(id, type,...);
+    constructor(id,type,size,brand,camera,
+        // ...
+            ) {
+        super(id, type,
+            // ...
+                );
         this.camera = camera;
     }
 

@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4e4ba;
+}
+
+.main {
+    padding: 15px;
+    background-color: #ffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+    outline: none;    /*on click border doesn't highlight*/
+}
+
+.currency-selector {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.currency {
+    padding: 3px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 30px;
+    width: 35px;
+}
+
+.fa-solid {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    border: none;
+    outline: none;
+}
+
+.result {
+    padding-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #c30fc3;
+    color: #ffff;
+    cursor: pointer;
+}

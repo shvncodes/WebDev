@@ -3,6 +3,10 @@ const buttonNode = document.querySelector("button");
 const fromCurrNode = document.querySelector(".from select");
 const toCurrNode = document.querySelector(".to select");
 const resultNode = document.querySelector(".result");
+const prevDataNode = document.querySelector(".prevData");
+const LOCAL_STORAGE_KEY = "prev_data";
+
+const history = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? [];
 
 // All currency code in select element:
 (function () {
@@ -55,4 +59,25 @@ buttonNode.addEventListener("click", async (event)=> {
     console.log(finalAmt);
 
     resultNode.innerText = `${amtVal} ${fromCurrNode.value} = ${finalAmt} ${toCurrNode.value}`;
+
+    const conversion = {
+        id: Math.random(),
+        Date: new Date().toDateString(),
+        From: `${amtVal} ${fromCurrNode.value}`,
+        To: `${finalAmt} ${toCurrNode.value}`
+    }
+    
+    history.push(conversion);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(history));
+
 });
+
+
+const DATA = [
+    {
+        id: ";gjewhg",
+        date: "date",
+        from: "5 USD",
+        to: "455.5 INR"
+    }
+]

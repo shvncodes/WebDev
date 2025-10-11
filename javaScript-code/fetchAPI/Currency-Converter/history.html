@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding: 30px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #222;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background-color: #c30fc3;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td:first-child {
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+        </thead>
+        <tbody class="prevData"></tbody>
+    </table>
+
+    <script>
+        const LOCAL_STORAGE_KEY = "prev_data";
+        const history = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? [];
+        const prevDataNode = document.querySelector(".prevData");
+        let rows = "";
+
+        history.forEach((data) => {
+            const newData = `
+                <tr>
+                    <td>${data.Date}</td>
+                    <td>${data.From}</td>
+                    <td>${data.To}</td>
+                </tr>`;
+            rows += newData;
+        });
+
+        prevDataNode.innerHTML = rows;
+    </script>
+</body>
+</html>

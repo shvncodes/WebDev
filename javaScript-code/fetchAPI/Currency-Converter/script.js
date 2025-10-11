@@ -1,7 +1,8 @@
-const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
-
 const currencySelectorNode = document.querySelectorAll(".currency-selector select");
 const buttonNode = document.querySelector("button");
+const fromCurrNode = document.querySelector(".from select");
+const toCurrNode = document.querySelector(".to select");
+const resultNode = document.querySelector(".result");
 
 // All currency code in select element:
 (function () {
@@ -32,7 +33,7 @@ const updateFlag = (element) => {
     img.src = newSrc;
 }
 
-buttonNode.addEventListener("click", (event)=> {
+buttonNode.addEventListener("click", async (event)=> {
     event.preventDefault(); //stops the browser’s default action (reload page)
     let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
@@ -40,4 +41,18 @@ buttonNode.addEventListener("click", (event)=> {
         amtVal = 1;
         amount.value = 1;
     }
+
+    const from = fromCurrNode.value.toLowerCase();
+    const to = toCurrNode.value.toLowerCase()
+    const API = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${from}.json`;
+    console.log(API);
+    const response = await fetch(API);
+    const data = await response.json();
+    const curr = data[from][to];
+    console.log(curr);
+    
+    const finalAmt = amtVal*curr;
+    console.log(finalAmt);
+
+    resultNode.innerText = `${amtVal} ${fromCurrNode.value} = ${finalAmt} ${toCurrNode.value}`;
 });

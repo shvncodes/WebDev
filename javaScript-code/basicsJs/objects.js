@@ -1,21 +1,144 @@
 // variable define -
-const age = 19;
-const name = "Shivani"
-const weight = 30.5
-const arr = [1, 2, 3, 4, 5]
+// const age = 19;
+// const name = "Shivani"
+// const weight = 30.5
+// const arr = [1, 2, 3, 4, 5]
 
-            // Object can contain - (property & behavior) variable, function, array, string, object, etc.
+        // Object can contain - (property & behavior) variable, function, array, string, object, etc.
 
 //Example 1
-const student = {
-    //property -
-    name: "Shivani",
-    marks: 72,
-    //behavior -
-    printMarks: function () {
-        console.log("marks =", this.marks);  //this.marks => student.marks
-    }
+const student1 = {
+    name: "Shivani",    //Behind the scene: "name": "Shivani"
+    rollNo: 58,
+    subject: "PCM",
+    marks: {
+      physics: 67,
+      chemistry: 87,
+      maths: 67
+    },
+    phoneNo: 9846014752,
+    add: "Delhi",
+    studentId() {
+        // this:- reference of the object
+        console.log(`Student id: ${this.name}, ${this.rollNo}, ${this.add}`);
+    },
+    emailId: "Shivani2025@gmail.com",
+    // home town: "Bihar" -> wrong
+    "home town": "Bihar"
 }
+
+// student.home town -> wrong
+console.log("Home town:", student1["home town"]);
+
+//access any element-
+console.log("\nName:", student1.name);
+console.log("Name:", student1["name"]);
+
+delete student1.emailId;    //delete element
+
+console.log("\nStudent1 Keys:", Object.keys(student1));     //get only keys
+console.log("\nStudent1 Values:", Object.values(student1));   //get only values
+console.log("\nStudent1 key-value:", Object.entries(student1));   //get both key-value
+
+
+//for in loop direct apply on object (!Not recommanded)-
+for(let keys in student1) {
+    //student1.keys -> undefined (kyuki aise karne pe compiler student1 obj ke andar keys naam ka element dhundhne lagega) 
+    //student1[keys] => student1["name"] && student1["rollNo"],....etc
+    console.log(keys, ":",student1[keys]); 
+}
+
+//for of loop cannot apply on object so we apply it on keys array "Object.keys(student1)", values array "Object.values(student1)"or both "Object.entries(student1)" -
+console.log("\n*****By using for of loop******");
+
+console.log("\nObject.keys(student1):-");
+for(let keys of Object.keys(student1)) {
+    console.log(keys);
+}
+
+console.log("\nObject.values(student1):-");
+for(let values of Object.values(student1)) {
+    console.log(values);
+}
+
+console.log("\nObject.entries(student1):-");
+for(let [key, value] of Object.entries(student1)) {
+    console.log(key, ":", value);
+}
+
+
+// const studentName = student1.name;
+// const studentRollNo = student1.rollNo; 
+
+//Object destructing-
+const {name:studentName, rollNo:studentRollNo} = student1;
+console.log(studentName, studentRollNo);
+//Array destructing-
+let arr = [1,2,3,4,5];
+const [first, second] = arr;    //first, second: variable name
+console.log(first, second);
+
+
+//function inside object-
+const student2 = {
+    name: "Akanasha",
+    rollNo: 13,
+    add: "U.P"
+}
+student2.studentId = student1.studentId;
+
+console.log("\nStudent1 Id:-")
+student2.studentId();
+
+console.log("Student2 Id:-")
+student2.studentId();
+
+
+//Nested object-
+console.log(student1.marks.physics);
+
+
+//both have same reference- 
+const student3 = student1;  // both reference one object (kisi main bhi change kro dono mai hi change hoga)
+student3.name = "Nisha";    //update
+student3.age = 18;       //create new element
+console.log("\nStudent1:", student1);  // name: "Nisha" && age: 18
+console.log("Student3:",student3);  // name: "Nisha" && age: 18
+
+
+//both have different references-
+
+// Shallow Copy:
+const student4 = {...student1}; // both reference different object (std1 ka sara element & methods std4 mai copy ho jayega ab hum jo bhi changes std4 mai karenge vo std1 mai nhi hoga & vice-versa but nested wali chijo ka reference abhi bhi same hi rahega)
+student4.name = "Sanvi";
+delete student4.emailId; //delete only from std4
+student4.marks.maths = 85;  //ye dono(std1 & std4) mai hi change ho jayega
+console.log("\nStudent1:", student1);
+console.log("Student4:", student4);
+
+//Deep Copy: structuredClone() doesn't clone Functions, DOM nodes & Object prototypes.
+delete student1.studentId;
+const student5 = structuredClone(student1); //now it is completely different
+student5.name = "Mihika";
+delete student5.phoneNo;
+student5.marks.maths = 90;
+console.log("\nStudent1:", student1);
+console.log("Student5:", student5);
+
+
+//array as a object-
+const numArray = [1,2,"Shivani",4,"Hello"]; //it looks like below obj
+numArray = {
+    0: 1, //behind the scenec: "0": 1
+    1: 2,
+    2: "Shivani",
+    3: 4,
+    4: "Hello"
+}
+// console.log(numArray.0); -> Wrong
+console.log(numArray[0]);
+
+
 
 //Example 2
 const mobilePhone = {
@@ -45,6 +168,7 @@ const mobilePhone = {
 }
 //how to access any object element 
 mobilePhone.setting.lowVolume(80);
+
 
 //Example 3 (object for each product in amazon)
 const data = {
@@ -78,53 +202,8 @@ const chat = {
     createdBy: 'shivani-account-id'
 }
 
-            // Prototype: Objects have a special property called prototype(reference to an object).
-
-const employee = {
-    calcTax() {
-        console.log("the tax is 10%");
-    }
-}
-
-const arjun = {
-    salary: 5000,
-}
-
-const karan = {
-    salary: 20000,
-    calcTax() {
-        console.log("the tax is 20%");
-    }
-}
-arjun.calcTax() //result: arjun.calcTax is not a function.
-
-// we can set prototype using object1. _ _ proto _ _ = "object2"
-arjun.__proto__ = employee;
-karan.__proto__ = employee;
-
-arjun.calcTax(); // result: the tax is 10%
-
-//if object & prototype have same method, object's method will be used.
-karan.calcTax(); // result: the tax is 20%
-
-
 
 //-----------------------------------------------------------------------------------------------------------------
-
-// Google:- Search, Gmail, GooglePay, Youtube, Android, Google Cloud AI,...
-// Meta:- Facebook, Instagram, WhatsApp.... MetaAI
-// Zomato:- Food App, Blinkit
-// Amazon:- Shopping App, Service App, AWS
-// Zuddl:- Setup, Webinar, Studio, Attendee Side(Event Side),....
-
-
-
-// Pizza.com -> Gaurav & Shivani
-// Pizza Pvt. ltd. -> Gaurav & Shivani
-// CEO - Gaurav (Barath)
-// CTO - Shivani (Vedha)
-
-
 
 //For import an object file in your js file
 
@@ -143,3 +222,18 @@ export const questions = [
     }
 ]
 // import {questions} from "./objects"
+
+
+
+// Google:- Search, Gmail, GooglePay, Youtube, Android, Google Cloud AI,...
+// Meta:- Facebook, Instagram, WhatsApp.... MetaAI
+// Zomato:- Food App, Blinkit
+// Amazon:- Shopping App, Service App, AWS
+// Zuddl:- Setup, Webinar, Studio, Attendee Side(Event Side),....
+
+
+
+// Pizza.com -> Gaurav & Shivani
+// Pizza Pvt. ltd. -> Gaurav & Shivani
+// CEO - Gaurav (Barath)
+// // CTO - Shivani (Vedha)
